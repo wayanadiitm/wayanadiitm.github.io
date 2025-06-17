@@ -1,7 +1,7 @@
 [
-  { "filename": "image1.jpg", "tags": ["LogicLooM 2.0", "PDX24"] },
-  { "filename": "image2.jpg", "tags": ["LogicLooM 2.0", "PDX24"] },
-  { "filename": "image3.jpg", "tags": ["LogicLooM 2.0", "PDX24"] },
-  { "filename": "image4.jpg", "tags": ["LogicLooM 2.0", "PDX24"] },
-  { "filename": "image5.jpg", "tags": ["ML Series"] }
+  { "filename": "image1", "tags": ["LogicLooM 2.0", "PDX24"] },
+  { "filename": "image2", "tags": ["LogicLooM 2.0", "PDX24"] },
+  { "filename": "image3", "tags": ["LogicLooM 2.0", "PDX24"] },
+  { "filename": "image4", "tags": ["LogicLooM 2.0", "PDX24"] },
+  { "filename": "image5", "tags": ["ML Series"] }
 ]
