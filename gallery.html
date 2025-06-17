@@ -89,6 +89,15 @@
 
     const SUPPORTED_FORMATS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.JPG', '.JPEG', '.PNG'];
 
+    // Function to check and append a valid image format if it's missing
+  function getImageUrl(filename) {
+  // Check if filename already has a valid extension
+  const hasExtension = SUPPORTED_FORMATS.some(format => filename.toLowerCase().endsWith(format));
+
+  // If no valid extension is found, default to .jpg
+  return `img/${filename}${hasExtension ? '' : '.jpg'}`;
+  }
+
     async function fetchImages() {
       const res = await fetch('images.json');
       allImages = await res.json();
@@ -123,22 +132,21 @@
       galleryGrid.innerHTML = '';
       imagesToShow.forEach((img, index) => {
         // Ensure image has a supported format
-        if (isSupportedImageFormat(img.filename)) {
+        const imageUrl = getImageUrl(img.filename);
         const imgDiv = document.createElement('div');
         imgDiv.setAttribute('data-aos', 'fade-up');
         imgDiv.innerHTML = `
           <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img src="img/${img.filename}" alt="${img.filename}" 
+            <img src="${imageUrl}" alt="${img.filename}" 
                  loading="lazy"
                  class="gallery-img w-full h-64 object-cover cursor-pointer"
-                 onclick="openModal('img/${img.filename}')">
+                 onclick="openModal('${imageUrl}')">
             <div class="p-3 flex flex-wrap gap-2">
               ${img.tags.map(tag => `<span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fa fa-tag"></i> ${tag}</span>`).join('')}
             </div>
           </div>
         `;
         galleryGrid.appendChild(imgDiv);
-          }
       });
 
       pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
