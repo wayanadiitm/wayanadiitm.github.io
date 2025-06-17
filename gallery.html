@@ -74,6 +74,8 @@
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
 
+    const SUPPORTED_FORMATS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.JPG', '.JPEG', '.PNG'];
+
     async function fetchImages() {
       const res = await fetch('images.json');
       allImages = await res.json();
@@ -96,6 +98,9 @@
       let filteredImages = currentTag === 'all'
         ? allImages
         : allImages.filter(img => img.tags.includes(currentTag));
+      
+      // Sort images to show the latest one first (most recent file)
+      filteredImages = filteredImages.reverse();
 
       const totalPages = Math.ceil(filteredImages.length / IMAGES_PER_PAGE);
       currentPage = Math.max(1, Math.min(currentPage, totalPages));
@@ -104,6 +109,8 @@
 
       galleryGrid.innerHTML = '';
       imagesToShow.forEach((img, index) => {
+        // Ensure image has a supported format
+        if (isSupportedImageFormat(img.filename)) {
         const imgDiv = document.createElement('div');
         imgDiv.setAttribute('data-aos', 'fade-up');
         imgDiv.innerHTML = `
@@ -118,11 +125,17 @@
           </div>
         `;
         galleryGrid.appendChild(imgDiv);
+          }
       });
 
       pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
       prevBtn.disabled = currentPage === 1;
       nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+    }
+
+    // Check if the image format is supported
+    function isSupportedImageFormat(filename) {
+      return SUPPORTED_FORMATS.some(format => filename.toLowerCase().endsWith(format));
     }
 
     tagFilter.addEventListener('change', () => {
