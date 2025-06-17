@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery - Wayanad House 2023 Archives</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <style>
     .gallery-img {
       transition: transform 0.3s, box-shadow 0.3s;
@@ -12,17 +14,19 @@
     .gallery-img:hover {
       transform: scale(1.05);
     }
+    .modal {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
 
-  <!-- Header -->
   <header class="text-center py-10 bg-white shadow-md">
     <h1 class="text-4xl font-bold">Image Gallery</h1>
     <p class="text-gray-600 mt-2">Browse through our visual archives</p>
   </header>
 
-  <!-- Filter and Pagination Controls -->
+  <!-- Filter & Pagination -->
   <div class="max-w-6xl mx-auto px-4 py-8">
     <div class="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
       <div>
@@ -31,7 +35,6 @@
           <option value="all">All</option>
         </select>
       </div>
-
       <div class="flex items-center gap-2 mt-2 md:mt-0">
         <button id="prevBtn" class="bg-blue-500 text-white px-4 py-2 rounded disabled:opacity-50">Prev</button>
         <span id="pageInfo" class="font-semibold"></span>
@@ -41,17 +44,25 @@
 
     <!-- Gallery Grid -->
     <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Images will be inserted here dynamically -->
+      <!-- Images will be inserted here -->
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Modal -->
+  <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal">
+    <div class="relative max-w-3xl w-full px-6">
+      <button onclick="closeModal()" class="absolute top-3 right-4 text-white text-3xl">&times;</button>
+      <img id="modalImg" src="" alt="Expanded" class="rounded-lg max-h-[80vh] w-full object-contain shadow-lg">
+    </div>
+  </div>
+
   <footer class="text-center py-6 text-sm text-gray-500 mt-12">
     &copy; Wayanad House 2023 Archives
   </footer>
 
-  <!-- JavaScript Logic -->
   <script>
+    AOS.init();
+
     const IMAGES_PER_PAGE = 20;
     let allImages = [];
     let currentTag = 'all';
@@ -88,18 +99,25 @@
 
       const totalPages = Math.ceil(filteredImages.length / IMAGES_PER_PAGE);
       currentPage = Math.max(1, Math.min(currentPage, totalPages));
-
       const start = (currentPage - 1) * IMAGES_PER_PAGE;
       const imagesToShow = filteredImages.slice(start, start + IMAGES_PER_PAGE);
 
       galleryGrid.innerHTML = '';
-      imagesToShow.forEach(img => {
-        const imgElement = document.createElement('div');
-        imgElement.innerHTML = `
-          <img src="img/${img.filename}" alt="${img.filename}" 
-               class="rounded-lg shadow-lg gallery-img w-full h-64 object-cover"/>
+      imagesToShow.forEach((img, index) => {
+        const imgDiv = document.createElement('div');
+        imgDiv.setAttribute('data-aos', 'fade-up');
+        imgDiv.innerHTML = `
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="img/${img.filename}" alt="${img.filename}" 
+                 loading="lazy"
+                 class="gallery-img w-full h-64 object-cover cursor-pointer"
+                 onclick="openModal('img/${img.filename}')">
+            <div class="p-3 flex flex-wrap gap-2">
+              ${img.tags.map(tag => `<span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">${tag}</span>`).join('')}
+            </div>
+          </div>
         `;
-        galleryGrid.appendChild(imgElement);
+        galleryGrid.appendChild(imgDiv);
       });
 
       pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
@@ -124,6 +142,16 @@
       currentPage++;
       renderGallery();
     });
+
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modalImg').src = '';
+    }
 
     // Initialize
     fetchImages();
