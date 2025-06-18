@@ -95,7 +95,8 @@
   }
 
     async function fetchImages() {
-      const res = await fetch('images.json');
+      //const res = await fetch('images.json');
+      const res = await fetch(`images.json?cacheBust=${Date.now()}`);
       allImages = await res.json();
       populateTagOptions();
       renderGallery();
