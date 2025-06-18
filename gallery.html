@@ -31,11 +31,6 @@
       <p class="text-xl sm:text-2xl font-medium text-gray-200 mb-6">
         Browse through our visual archives
       </p>
-      <div class="mt-8">
-        <a href="" class="inline-block py-3 px-8 text-lg font-semibold bg-blue-700 hover:bg-blue-800 rounded-full shadow-md transition duration-300">
-          Explore Gallery
-        </a>
-      </div>
     </div>
   </header> 
 
@@ -92,10 +87,11 @@
     // Function to check and append a valid image format if it's missing
   function getImageUrl(filename) {
   // Check if filename already has a valid extension
-  const hasExtension = SUPPORTED_FORMATS.some(format => filename.toLowerCase().endsWith(format));
+  //const hasExtension = SUPPORTED_FORMATS.some(format => filename.toLowerCase().endsWith(format));
 
   // If no valid extension is found, default to .jpg
-  return `img/${filename}${hasExtension ? '' : '.jpg'}`;
+  //return `img/${filename}${hasExtension ? '' : '.jpg'}`;
+    return `img/${filename}`;
   }
 
     async function fetchImages() {
