@@ -121,15 +121,46 @@
     }
 
     function populateTagOptions() {
-      const tags = new Set();
-      allImages.forEach(img => img.tags.forEach(tag => tags.add(tag)));
-      tags.forEach(tag => {
-        const option = document.createElement('option');
-        option.value = tag;
-        option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
-        tagFilter.appendChild(option);
-      });
+  const existingOptions = new Set();
+  const tags = new Set();
+
+  allImages.forEach(img => img.tags.forEach(tag => tags.add(tag)));
+
+  // Clear old options first if any
+  tagFilter.innerHTML = '';
+
+  // Add default "All" option
+  const allOption = document.createElement('option');
+  allOption.value = 'all';
+  allOption.textContent = 'All';
+  tagFilter.appendChild(allOption);
+  existingOptions.add('all');
+
+  // Add tag options dynamically
+  tags.forEach(tag => {
+    if (!existingOptions.has(tag)) {
+      const option = document.createElement('option');
+      option.value = tag;
+      option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+      tagFilter.appendChild(option);
+      existingOptions.add(tag);
     }
+  });
+
+  // Initialize or refresh Tom Select
+  if (tagFilter.tomselect) {
+    tagFilter.tomselect.destroy(); // Clean previous instance
+  }
+
+  new TomSelect(tagFilter, {
+    create: false,
+    sortField: {
+      field: "text",
+      direction: "asc"
+    },
+    placeholder: "Select a tag..."
+  });
+}
 
     function renderGallery() {
       let filteredImages = currentTag === 'all'
@@ -232,7 +263,7 @@
   
   document.oncontextmenu=new Function("return false")
 </script>
-<script>
+<!--<script>
   document.addEventListener('DOMContentLoaded', function () {
     new TomSelect("#tagFilter", {
       create: false,
@@ -243,7 +274,7 @@
       maxOptions: 100
     });
   });
-</script>
+</script>-->
 <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
 </body>
 </html>
