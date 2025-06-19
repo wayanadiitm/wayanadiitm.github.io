@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - Wayanad House 2023 Archives</title>
+    <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    .gallery-img {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-img:hover {
+      transform: scale(1.05);
+    }
+    .modal {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body class="starter-page-page">
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">Invent</h1><span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#team">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 class="heading-title">Image Gallery</h1>
+              <p class="mb-0">
+                       Browse through our visual archives
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="">Home</a></li>
+            <li class="current">Gallery</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+        <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+      <div class="container" data-aos="fade-up">
+
+        <!-- Filter & Pagination -->
+<div class="max-w-6xl mx-auto px-4 py-8">
+  <div class="flex flex-col md:flex-row items-center justify-between gap-6 bg-white shadow-md p-6 rounded-lg">
+    
+    <div class="flex items-center gap-3 w-full md:w-auto">
+      <label for="tagFilter" class="text-gray-700 font-medium whitespace-nowrap">Filter by</label>
+      <div class="relative w-full md:w-48">
+        <!--<select id="tagFilter" class="block w-full px-4 py-2 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">-->
+          <select id="tagFilter" placeholder="Select a category..." autocomplete="off" class="tom-select">
+          <option value="all">All</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
+          <i class="fa fa-chevron-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="flex items-center justify-center gap-4">
+      <button id="prevBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
+        <i class="fa fa-arrow-left"></i><span>Prev</span>
+      </button>
+      <span id="pageInfo" class="text-gray-800 font-semibold text-lg"></span>
+      <button id="nextBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
+        <span>Next</span><i class="fa fa-arrow-right"></i>
+      </button>    
+  </div>
+</div>
+</div>
+        
+      </div>
+
+    </section><!-- /Starter Section Section -->
+
+
+    <!-- Gallery Grid -->
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Images will be inserted here -->
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal bg-black bg-opacity-80">
+    <div class="relative max-w-3xl w-full px-6">
+      <button onclick="closeModal()" class="absolute top-4 right-4 bg-white text-gray-800 hover:bg-red-500 hover:text-white transition-colors text-xl font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-md"
+      aria-label="Close">&times;</button>
+      <img id="modalImg" src="" class="rounded-lg max-h-[80vh] w-full object-contain shadow-lg mt-4">
+    </div>
+  </div>
+
+      </main>
+
+
+<footer id="footer" class="footer light-background">
+   <div class="container copyright text-center mt-4">
+      <p>&copy; Wayanad House 2023 team | Using any data is prohibited without explicit permission from the site owners | <a href="mailto:wayanad23team@googlegroups.com" target="_blank"><u>Contribute to Archives</u></a></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    AOS.init();
+
+    const IMAGES_PER_PAGE = 20;
+    let allImages = [];
+    let currentTag = 'all';
+    let currentPage = 1;
+
+    const tagFilter = document.getElementById('tagFilter');
+    const galleryGrid = document.getElementById('galleryGrid');
+    const pageInfo = document.getElementById('pageInfo');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    const SUPPORTED_FORMATS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg', '.JPG', '.JPEG', '.PNG'];
+
+    // Function to check and append a valid image format if it's missing
+  function getImageUrl(filename) {
+  // Check if filename already has a valid extension
+  //const hasExtension = SUPPORTED_FORMATS.some(format => filename.toLowerCase().endsWith(format));
+
+  // If no valid extension is found, default to .jpg
+  //return `img/${filename}${hasExtension ? '' : '.jpg'}`;
+    return `img/${filename}`;
+  }
+
+    async function fetchImages() {
+      //const res = await fetch('images.json');
+      const res = await fetch(`images.json?cacheBust=${Date.now()}`);
+      allImages = await res.json();
+      populateTagOptions();
+      renderGallery();
+    }
+
+    function populateTagOptions() {
+  const existingOptions = new Set();
+  const tags = new Set();
+
+  allImages.forEach(img => img.tags.forEach(tag => tags.add(tag)));
+
+  // Clear old options first if any
+  tagFilter.innerHTML = '';
+
+  // Add default "All" option
+  const allOption = document.createElement('option');
+  allOption.value = 'all';
+  allOption.textContent = 'All';
+  tagFilter.appendChild(allOption);
+  existingOptions.add('all');
+
+  // Add tag options dynamically
+  tags.forEach(tag => {
+    if (!existingOptions.has(tag)) {
+      const option = document.createElement('option');
+      option.value = tag;
+      option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+      tagFilter.appendChild(option);
+      existingOptions.add(tag);
+    }
+  });
+
+  // Initialize or refresh Tom Select
+  if (tagFilter.tomselect) {
+    tagFilter.tomselect.destroy(); // Clean previous instance
+  }
+
+  new TomSelect(tagFilter, {
+    create: false,
+    sortField: {
+      field: "text",
+      direction: "asc"
+    },
+    placeholder: "Select a tag..."
+  });
+}
+
+    function renderGallery() {
+      let filteredImages = currentTag === 'all'
+        ? allImages
+        : allImages.filter(img => img.tags.includes(currentTag));
+      
+      // Sort images to show the latest one first (most recent file)
+      filteredImages = filteredImages.reverse();
+
+      const totalPages = Math.ceil(filteredImages.length / IMAGES_PER_PAGE);
+      currentPage = Math.max(1, Math.min(currentPage, totalPages));
+      const start = (currentPage - 1) * IMAGES_PER_PAGE;
+      const imagesToShow = filteredImages.slice(start, start + IMAGES_PER_PAGE);
+
+      galleryGrid.innerHTML = '';
+      imagesToShow.forEach((img, index) => {
+        // Ensure image has a supported format
+        const imageUrl = getImageUrl(img.filename);
+        const imgDiv = document.createElement('div');
+        imgDiv.setAttribute('data-aos', 'fade-up');
+        imgDiv.innerHTML = `
+          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="${imageUrl}" alt="${img.filename}" 
+                 loading="lazy"
+                 class="gallery-img w-full h-64 object-cover cursor-pointer"
+                 onclick="openModal('${imageUrl}')">
+            <div class="p-3 flex flex-wrap gap-2">
+              ${img.tags.map(tag => `<span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fa fa-tag"></i> ${tag}</span>`).join('')}
+            </div>
+          </div>
+        `;
+        galleryGrid.appendChild(imgDiv);
+      });
+
+      pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+    }
+
+    // Check if the image format is supported
+    function isSupportedImageFormat(filename) {
+      return SUPPORTED_FORMATS.some(format => filename.toLowerCase().endsWith(format));
+    }
+
+    tagFilter.addEventListener('change', () => {
+      currentTag = tagFilter.value;
+      currentPage = 1;
+      renderGallery();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderGallery();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentPage++;
+      renderGallery();
+    });
+
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modalImg').src = '';
+    }
+
+    // Initialize
+    fetchImages();
+  </script>
+  <script language="JavaScript">
+  var message="Function Disabled!";
+  
+  function clickIE4(){
+  if (event.button==2){
+  return false;
+   }
+  }
+  
+  function clickNS4(e){
+  if (document.layers||document.getElementById&&!document.all){
+  if (e.which==2||e.which==3){
+  return false;
+  }
+  }
+  }
+  
+  if (document.layers){
+  document.captureEvents(Event.MOUSEDOWN);
+  document.onmousedown=clickNS4;
+  }
+  else if (document.all&&!document.getElementById){
+  document.onmousedown=clickIE4;
+  }
+  
+  document.oncontextmenu=new Function("return false")
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+    
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
