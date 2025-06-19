@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery - Wayanad House 2023 Archives</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -41,7 +42,8 @@
     <div class="flex items-center gap-3 w-full md:w-auto">
       <label for="tagFilter" class="text-gray-700 font-medium whitespace-nowrap">Filter by</label>
       <div class="relative w-full md:w-48">
-        <select id="tagFilter" class="block w-full px-4 py-2 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
+        <!--<select id="tagFilter" class="block w-full px-4 py-2 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">-->
+          <select id="tagFilter" placeholder="Select a category..." autocomplete="off" class="tom-select">
           <option value="all">All</option>
         </select>
         <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
@@ -81,7 +83,7 @@
   </div>
 
   <footer class="text-center py-6 text-sm text-gray-500 mt-12">
-    &copy; Wayanad House 2023 Archives
+        &copy; Wayanad House 2023 team | Using any data is prohibited without explicit permission from the site owners | <a href="mailto:wayanad23team@googlegroups.com" target="_blank"><u>Contribute to Archives</u></a>
   </footer>
 
   <script>
@@ -230,5 +232,18 @@
   
   document.oncontextmenu=new Function("return false")
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new TomSelect("#tagFilter", {
+      create: false,
+      sortField: {
+        field: "text",
+        direction: "asc"
+      },
+      maxOptions: 100
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
 </body>
 </html>
