@@ -3,103 +3,260 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wayanad House 2023 Archives</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <title>Wayanad House Archives</title>
   <link rel="icon" href="/23logo.png" type="image/png">
+   <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-800 font-[Inter]">
+<body class="index-page">
 
-  <header class="py-10 text-center">
-    <h1 class="text-4xl font-bold mb-2">Wayanad House Archival Repository</h1>
-    <p class="text-lg text-gray-600">Explore the initiatives, logs and intellectual journeys of the third and fourth tenures (Sep 2023 to June 2025) at Wayanad House, IITM BS Program.</p>
-  </header>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
 
-    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mx-4 my-4 rounded-md" role="alert">
-    <p class="font-semibold">Note:</p>
-    <p>The repository is currently under construction. All GLs, RCs, PoRs of Wayanad 3rd & 4th tenures are requested to contribute any sort of archival data that they might have.</p>
-  </div>
-
-  <!-- Archive Grid -->
-  <main class="max-w-6xl mx-auto px-4 py-12">
-    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-      
-      <!-- ML Series Card -->
-      <a href="/ml/" class="block rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-1 bg-white">
-        <div class="mb-4">
-          <img src="/ml/assets/images/ml-icon.svg" alt="ML Series" class="w-12 h-12">
-        </div>
-        <h2 class="text-2xl font-semibold mb-2">ML Series</h2>
-        <p class="text-gray-600">An initiative exploring the depths of Machine Learning from Wayanad House.</p>
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">Wayanad</h1><sub><span>@24</span></sub>
       </a>
 
-      <!-- House Archives Card -->
-      <a href="" class="block rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-1 bg-white">
-        <div class="mb-4">
-          <img src="/ml/assets/images/archive-icon.svg" alt="House Archives" class="w-12 h-12">
-        </div>
-        <h2 class="text-2xl font-semibold mb-2">House Archives</h2>
-        <p class="text-gray-600">Internal notes, past events, project documentation, and house records.</p>
-      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Video Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/ml/archives">AI-ML</a></li>
+              <li class="dropdown"><a href="#"><span>Web Archives</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://wayanadiitm.github.io/ml/events/logicloom1/">LogicLooM 1.0</a></li>
+                  <li><a href="https://wayanadiitm.github.io/ml/events/logicloom2/">LogicLooM 2.0</a></li>
+                  <li><a href="https://wayanadiitm.github.io/logicloom3/">LogicLooM 3.0</a></li>
+                  <li><a href="https://wayanadiitm.github.io/logicloom4/">LogicLooM 4.0 (Finale)</a></li>
+                </ul>
+              </li>
+              <li><a href="https://wayanadiitm.github.io/ml/events/mlc/">ML Challenge</a></li>
+            </ul>
+          </li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
-      <!-- LogicLoom Card -->
-      <a href="" class="block rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-1 bg-white">
-        <div class="mb-4">
-          <img src="/ml/assets/images/logic-icon.svg" alt="LogicLoom" class="w-12 h-12">
-        </div>
-        <h2 class="text-2xl font-semibold mb-2">LogicLooM 1.0</h2>
-        <p class="text-gray-600">text here</p>
-      </a>
-
-       <a href="" class="block rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-1 bg-white">
-        <div class="mb-4">
-          <img src="/ml/assets/images/logic-icon.svg" alt="LogicLoom" class="w-12 h-12">
-        </div>
-        <h2 class="text-2xl font-semibold mb-2">LogicLooM 2.0</h2>
-        <p class="text-gray-600">text here</p>
-      </a>
-
-       <a href="" class="block rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-1 bg-white">
-        <div class="mb-4">
-          <img src="/ml/assets/images/logic-icon.svg" alt="LogicLoom" class="w-12 h-12">
-        </div>
-        <h2 class="text-2xl font-semibold mb-2">LogicLooM 3.0</h2>
-        <p class="text-gray-600">text here</p>
-      </a>
-
-       <a href="" class="block rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-1 bg-white">
-        <div class="mb-4">
-          <img src="/ml/assets/images/logic-icon.svg" alt="LogicLoom" class="w-12 h-12">
-        </div>
-        <h2 class="text-2xl font-semibold mb-2">LogicLooM Finale</h2>
-        <p class="text-gray-600">text here</p>
-      </a>
-
-       <!-- gallery Card -->
-      <a href="gallery" class="block rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-1 bg-white">
-        <div class="mb-4">
-          <img src="/ml/assets/images/logic-icon.svg" alt="LogicLoom" class="w-12 h-12">
-        </div>
-        <h2 class="text-2xl font-semibold mb-2">Gallery</h2>
-        <p class="text-gray-600">text here</p>
-      </a>
-
-      <!-- paradox Card -->
-      <a href="gallery" class="block rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition hover:-translate-y-1 bg-white">
-        <div class="mb-4">
-          <img src="/ml/assets/images/logic-icon.svg" alt="LogicLoom" class="w-12 h-12">
-        </div>
-        <h2 class="text-2xl font-semibold mb-2">Wayanad at Paradox</h2>
-        <p class="text-gray-600">text here</p>
-      </a>
+      <a class="btn-getstarted" href="/">Get Started</a>
 
     </div>
-  </main>
+  </header>
 
-  <footer class="text-center text-sm text-gray-500 py-8">
-    &copy; Wayanad House 2023 team | Using any data is prohibited without explicit permission from the site owners | <a href="mailto:wayanad23team@googlegroups.com" target="_blank"><u>Contribute to Archives</u></a>
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+
+            <h1 class="hero-title mb-4">Wayanad House Archival Repository</h1>
+
+            <p class="hero-description mb-4">Dive into the digital archive of the 3rd & 4th tenures (2023–24 and 2024–25) of the Wayanad House council, IITM BS Program, now preserved on GitHub. This repository is a transparent record of everything that shaped the student life during these two dynamic years — from council meetings and competitions to offline meetups, creative projects and everyday moments. It's a curated reflection of the people, initiatives and spirit that defined the house.</p>
+
+            <div class="cta-wrapper">
+              <a href="" class="btn btn-primary">Discover More</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-image">
+              <img src="assets/img/illustration/illustration-16.webp" alt="Business Growth" class="img-fluid" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="row feature-boxes">
+          <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-box">
+              <div class="feature-icon me-sm-4 mb-3 mb-sm-0">
+                <i class="bi bi-images"></i>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Gallery</h3>
+                <p class="feature-text"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-box">
+              <div class="feature-icon me-sm-4 mb-3 mb-sm-0">
+                <i class="bi bi-calendar-event-fill"></i>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Events</h3>
+                <p class="feature-text"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-box">
+              <div class="feature-icon me-sm-4 mb-3 mb-sm-0">
+                <i class="bi bi-trophy-fill"></i>
+              </div>
+              <div class="feature-content">
+                <h3 class="feature-title">Achievements</h3>
+                <p class="feature-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+ <!-- Team Section -->
+    <section id="team" class="team section light-background">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <!--<p></p>-->
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5">
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="assets/img/person/person-m-1.webp" class="img-fluid" alt="">
+                <div class="team-overlay">
+                  <p></p>
+                  <div class="team-social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="team-content">
+                <h4>Somsubhra</h4>
+                <span class="position">Council 2023-24</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="assets/img/person/person-f-6.webp" class="img-fluid" alt="">
+                <div class="team-overlay">
+                  <p></p>
+                  <div class="team-social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="team-content">
+                <h4>Pritesh</h4>
+                <span class="position">Council 2023-24</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="assets/img/person/person-m-6.webp" class="img-fluid" alt="">
+                <div class="team-overlay">
+                  <p></p>
+                  <div class="team-social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="team-content">
+                <h4>Advait Vats</h4>
+                <span class="position">Council 2023-24</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          
+ </main>
+
+ <footer id="footer" class="footer light-background">
+   <div class="container copyright text-center mt-4">
+      <p>&copy; Wayanad House 2023-24 team | Using any data is prohibited without explicit permission from the site owners | <a href="mailto:wayanad23team@googlegroups.com" target="_blank"><u>Contribute to Archives</u></a></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
   </footer>
+<script language="JavaScript">
+  var message="Function Disabled!";
+  
+  function clickIE4(){
+  if (event.button==2){
+  return false;
+   }
+  }
+  
+  function clickNS4(e){
+  if (document.layers||document.getElementById&&!document.all){
+  if (e.which==2||e.which==3){
+  return false;
+  }
+  }
+  }
+  
+  if (document.layers){
+  document.captureEvents(Event.MOUSEDOWN);
+  document.onmousedown=clickNS4;
+  }
+  else if (document.all&&!document.getElementById){
+  document.onmousedown=clickIE4;
+  }
+  
+  document.oncontextmenu=new Function("return false")
+</script>
+    
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
