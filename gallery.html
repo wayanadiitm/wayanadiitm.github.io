@@ -41,7 +41,7 @@
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.webp" alt=""> -->
-        <h1 class="sitename">Wayanad</h1><sub><span class="align-baseline small">@24</span></sub>
+        <h1 class="sitename">Wayanad</h1><sub><span><small>@24</small></span></sub>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -130,7 +130,11 @@
   </div>
 </div>
 
-
+<div id="globalLoader" class="text-center py-5">
+  <i class="bi bi-arrow-repeat spinner-border text-primary" style="font-size: 2rem;"></i>
+  <p class="mt-2">Loading gallery...</p>
+</div>
+        
   <!-- Gallery Grid -->
   <div class="container mx-auto py-8">
 <div class="row g-4" id="galleryGrid">
@@ -257,11 +261,16 @@ galleryGrid.innerHTML = '';
   }
 
     async function fetchImages() {
-      //const res = await fetch('images.json');
+      document.getElementById('globalLoader').style.display = 'block';
+      galleryGrid.style.display = 'none';
+      
       const res = await fetch(`images.json?cacheBust=${Date.now()}`);
       allImages = await res.json();
       populateTagOptions();
       renderGallery();
+
+      document.getElementById('globalLoader').style.display = 'none';
+      galleryGrid.style.display = 'flex';
     }
 
     function populateTagOptions() {
@@ -328,6 +337,9 @@ galleryGrid.innerHTML = '';
         imgDiv.setAttribute('data-aos', 'fade-up');
         imgDiv.innerHTML = `
           <div class="card h-100 bg-white shadow-sm overflow-hidden">
+          <div class="spinner-overlay d-flex justify-content-center align-items-center w-100 h-100 position-absolute top-0 start-0 bg-light" style="z-index: 1;">
+        <i class="bi bi-arrow-repeat spinner-border text-primary"></i>
+      </div>
             <img src="${imageUrl}" alt="${img.filename}" 
                  loading="lazy"
                  class="gallery-img card-img-top h-100 img-fluid"
