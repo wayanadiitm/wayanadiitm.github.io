@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - Wayanad House Archives</title>
+    <link rel="icon" href="/23logo.png" type="image/png">
+    <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
+  <!--<script src="https://cdn.tailwindcss.com"></script>-->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    .gallery-img {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-img:hover {
+      transform: scale(1.05);
+    }
+     .spinner-border {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+  </style>
+</head>
+<body class="starter-page-page">
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">Wayanad</h1><sub><span><small>@24</small></span></sub>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Team</a></li>
+          <li class="dropdown"><a href="#"><span>Video Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/ml/archives">AI-ML</a></li>
+              <li class="dropdown"><a href="#"><span>Web Archives</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="https://wayanadiitm.github.io/ml/events/logicloom1/">LogicLooM 1.0</a></li>
+                  <li><a href="https://wayanadiitm.github.io/ml/events/logicloom2/">LogicLooM 2.0</a></li>
+                  <li><a href="https://wayanadiitm.github.io/logicloom3/">LogicLooM 3.0</a></li>
+                  <li><a href="https://wayanadiitm.github.io/logicloom4/">LogicLooM 4.0 (Finale)</a></li>
+                </ul>
+              </li>
+              <li><a href="https://wayanadiitm.github.io/ml/events/mlc/">ML Challenge</a></li>
+            </ul>
+          </li>
+          <li><a href="mailto:wayanad24team@googlegroups.com" target="_blank">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="/">Get Started</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="heading" style="background: url('/bg.png') no-repeat center center; background-size: cover;">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 class="heading-title">Public Files</h1>
+              <p class="mb-0">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="">Home</a></li>
+            <li class="current">Docs</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+        <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+      <div class="container" data-aos="fade-up">
+
+        <!-- Filter & Pagination -->
+<div class="container py-4">
+  <div class="row align-items-center justify-content-between bg-white shadow-sm p-4 rounded mb-4 g-3">
+    
+    <div class="col-12 col-md-auto d-flex align-items-center gap-2">
+    <label for="tagFilter" class="text-muted font-weight-medium me-2">Filter by</label>
+    <div class="position-relative w-100" style="max-width: 12rem;">
+        <select id="tagFilter" class="form-select" aria-label="Select a category..." autocomplete="off">
+            <option value="all">All</option>
+        </select>
+    </div>
+</div>
+
+    <div class="col-12 col-md-auto d-flex align-items-center gap-3">
+      <button id="prevBtn" class="btn btn-primary d-flex align-items-center gap-1" disabled>
+        <i class="bi bi-arrow-left-circle-fill"></i> Prev
+      </button>
+      <span id="pageInfo" class="text-body fw-semibold fs-5"></span>
+      <button id="nextBtn" class="btn btn-primary d-flex align-items-center gap-1">
+        Next <i class="bi bi-arrow-right-circle-fill"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<div id="globalLoader" class="text-center py-5">
+  <i class="spinner-border text-primary" style="font-size: 2rem;"></i>
+  <p class="mt-2">Loading ...</p>
+</div>
+        
+  <!-- Gallery Grid -->
+  <div class="container mx-auto py-8">
+<div class="row g-4" id="galleryGrid">
+  </div>
+</div>
+</div>
+      
+<!-- Modal -->
+<div id="modal" class="modal fade" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-body position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        <img id="modalImg" src="" class="img-fluid rounded mx-auto d-block mt-3" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+</main>
+
+
+
+<footer id="footer" class="footer light-background">
+   <div class="container copyright text-center mt-4">
+      <p>&copy; Wayanad House 2023-24 team | Using any data is prohibited without explicit permission from the site owners | <a href="mailto:wayanad24team@googlegroups.com" target="_blank"><u>Contribute to Archives</u></a></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+  
+<script>
+AOS.init();
+
+const FILES_PER_PAGE = 20;
+let allReports = [];
+let currentTag = 'all';
+let currentPage = 1;
+
+const tagFilter = document.getElementById('tagFilter');
+const galleryGrid = document.getElementById('galleryGrid');
+const pageInfo = document.getElementById('pageInfo');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+async function fetchReports() {
+  document.getElementById('globalLoader').style.display = 'block';
+  galleryGrid.style.display = 'none';
+
+  const res = await fetch(`reports.json?cacheBust=${Date.now()}`);
+  allReports = await res.json();
+  populateTagOptions();
+  renderGallery();
+
+  document.getElementById('globalLoader').style.display = 'none';
+  galleryGrid.style.display = 'flex';
+}
+
+function populateTagOptions() {
+  const tags = new Set();
+
+  allReports.forEach(report => report.tags.forEach(tag => tags.add(tag)));
+  tagFilter.innerHTML = '';
+
+  const allOption = document.createElement('option');
+  allOption.value = 'all';
+  allOption.textContent = 'All';
+  tagFilter.appendChild(allOption);
+
+  tags.forEach(tag => {
+    const option = document.createElement('option');
+    option.value = tag;
+    option.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
+    tagFilter.appendChild(option);
+  });
+
+  if (tagFilter.tomselect) tagFilter.tomselect.destroy();
+  new TomSelect(tagFilter, {
+    create: false,
+    sortField: { field: "text", direction: "asc" },
+    placeholder: "Select a tag..."
+  });
+}
+
+function renderGallery() {
+  let filtered = currentTag === 'all'
+    ? allReports
+    : allReports.filter(r => r.tags.includes(currentTag));
+
+  filtered = filtered.reverse();
+  const totalPages = Math.ceil(filtered.length / FILES_PER_PAGE);
+  currentPage = Math.max(1, Math.min(currentPage, totalPages));
+  const start = (currentPage - 1) * FILES_PER_PAGE;
+  const reportsToShow = filtered.slice(start, start + FILES_PER_PAGE);
+
+  galleryGrid.innerHTML = '';
+  reportsToShow.forEach(report => {
+    const fileUrl = `GL_REPORTS/${report.filename}`;
+    const card = document.createElement('div');
+    card.className = 'col-12 col-sm-6 col-md-4';
+    card.setAttribute('data-aos', 'fade-up');
+    card.innerHTML = `
+      <div class="card h-100 bg-white shadow-sm p-3">
+        <div class="d-flex flex-column justify-content-between" style="height: 100%;">
+          <div>
+            <div class="text-center text-danger mb-2">
+              <i class="bi bi-file-earmark-pdf-fill" style="font-size: 3rem;"></i>
+            </div>
+            <h6 class="text-truncate text-center">${report.filename}</h6>
+          </div>
+          <div class="d-flex justify-content-center mt-3">
+            <a href="${fileUrl}" target="_blank" class="btn btn-outline-primary btn-sm">
+              View PDF
+            </a>
+          </div>
+          <div class="mt-3 d-flex flex-wrap gap-2 justify-content-center">
+            ${report.tags.map(tag => `<span class="badge bg-light text-primary"><i class="bi bi-tags-fill"></i> ${tag}</span>`).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+    galleryGrid.appendChild(card);
+  });
+
+  pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+}
+
+tagFilter.addEventListener('change', () => {
+  currentTag = tagFilter.value;
+  currentPage = 1;
+  renderGallery();
+});
+
+prevBtn.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    renderGallery();
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  currentPage++;
+  renderGallery();
+});
+
+// Start
+fetchReports();
+</script>
+  <script language="JavaScript">
+  var message="Function Disabled!";
+  
+  function clickIE4(){
+  if (event.button==2){
+  return false;
+   }
+  }
+  
+  function clickNS4(e){
+  if (document.layers||document.getElementById&&!document.all){
+  if (e.which==2||e.which==3){
+  return false;
+  }
+  }
+  }
+  
+  if (document.layers){
+  document.captureEvents(Event.MOUSEDOWN);
+  document.onmousedown=clickNS4;
+  }
+  else if (document.all&&!document.getElementById){
+  document.onmousedown=clickIE4;
+  }
+  
+  document.oncontextmenu=new Function("return false")
+</script>
+<script>
+  function openModal(imageSrc) {
+  const modalImg = document.getElementById("modalImg");
+  modalImg.src = imageSrc;
+  const modal = new bootstrap.Modal(document.getElementById('modal'));
+  modal.show();
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+    
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
