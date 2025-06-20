@@ -108,56 +108,49 @@
       <div class="container" data-aos="fade-up">
 
         <!-- Filter & Pagination -->
-<div class="max-w-6xl mx-auto px-4 py-8">
-  <div class="flex flex-col md:flex-row items-center justify-between gap-6 bg-white shadow-md p-6 rounded-lg">
+<div class="container py-4">
+  <div class="row align-items-center justify-content-between bg-white shadow-sm p-4 rounded mb-4 g-3">
     
-    <div class="flex items-center gap-3 w-full md:w-auto">
-      <label for="tagFilter" class="text-gray-700 font-medium whitespace-nowrap">Filter by</label>
-      <div class="relative w-full md:w-48">
-        <!--<select id="tagFilter" class="block w-full px-4 py-2 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">-->
-          <select id="tagFilter" placeholder="Select a category..." autocomplete="off" class="tom-select">
+    <div class="col-12 col-md-auto d-flex align-items-center gap-2">
+      <label for="tagFilter" class="form-label mb-0 fw-medium text-nowrap">Filter by</label>
+      <div class="position-relative">
+        <select id="tagFilter" class="form-select" autocomplete="off">
           <option value="all">All</option>
         </select>
-        <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
-          <i class="fa fa-chevron-down"></i>
-        </div>
       </div>
     </div>
 
-    <!-- Pagination Controls -->
-    <div class="flex items-center justify-center gap-4">
-      <button id="prevBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-        <i class="bi bi-arrow-left-circle-fill"></i><span>Prev</span>
+    <div class="col-12 col-md-auto d-flex align-items-center gap-3">
+      <button id="prevBtn" class="btn btn-primary d-flex align-items-center gap-1" disabled>
+        <i class="bi bi-arrow-left-circle-fill"></i> Prev
       </button>
-      <span id="pageInfo" class="text-gray-800 font-semibold text-lg"></span>
-      <button id="nextBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-        <span>Next</span><i class="bi bi-arrow-right-circle-fill"></i>i>
-      </button>    
+      <span id="pageInfo" class="fw-semibold fs-5"></span>
+      <button id="nextBtn" class="btn btn-primary d-flex align-items-center gap-1">
+        Next <i class="bi bi-arrow-right-circle-fill"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Gallery Grid -->
+  <div class="row g-4" id="galleryGrid">
   </div>
 </div>
-</div>
-        
+
+<!-- Modal -->
+<div id="modal" class="modal fade" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-body position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        <img id="modalImg" src="" class="img-fluid rounded mx-auto d-block mt-3" alt="">
       </div>
-
-    </section><!-- /Starter Section Section -->
-
-
-    <!-- Gallery Grid -->
-  <div class="max-w-6xl mx-auto px-4 py-8">
-    <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Images will be inserted here -->
     </div>
   </div>
+</div>
 
-  <!-- Modal -->
-  <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal bg-black bg-opacity-80">
-    <div class="relative max-w-3xl w-full px-6">
-      <button onclick="closeModal()" class="absolute top-4 right-4 bg-white text-gray-800 hover:bg-red-500 hover:text-white transition-colors text-xl font-bold rounded-full w-10 h-10 flex items-center justify-center shadow-md"
-      aria-label="Close">&times;</button>
-      <img id="modalImg" src="" class="rounded-lg max-h-[80vh] w-full object-contain shadow-lg mt-4">
-    </div>
-  </div>
 
+        
       </main>
 
 
