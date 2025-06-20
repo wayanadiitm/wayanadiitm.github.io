@@ -20,9 +20,8 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!--<script src="https://cdn.tailwindcss.com"></script>-->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <style>
@@ -67,7 +66,7 @@
               <li><a href="https://wayanadiitm.github.io/ml/events/mlc/">ML Challenge</a></li>
             </ul>
           </li>
-          <li><a href="/">Contact</a></li>
+          <li><a href="mailto:wayanad24team@googlegroups.com" target="_blank">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -128,11 +127,11 @@
     <!-- Pagination Controls -->
     <div class="flex items-center justify-center gap-4">
       <button id="prevBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-        <i class="fa fa-arrow-left"></i><span>Prev</span>
+        <i class="bi bi-arrow-left-circle-fill"></i><span>Prev</span>
       </button>
       <span id="pageInfo" class="text-gray-800 font-semibold text-lg"></span>
       <button id="nextBtn" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-        <span>Next</span><i class="fa fa-arrow-right"></i>
+        <span>Next</span><i class="bi bi-arrow-right-circle-fill"></i>i>
       </button>    
   </div>
 </div>
@@ -164,7 +163,7 @@
 
 <footer id="footer" class="footer light-background">
    <div class="container copyright text-center mt-4">
-      <p>&copy; Wayanad House 2023-24 team | Using any data is prohibited without explicit permission from the site owners | <a href="mailto:wayanad23team@googlegroups.com" target="_blank"><u>Contribute to Archives</u></a></p>
+      <p>&copy; Wayanad House 2023-24 team | Using any data is prohibited without explicit permission from the site owners | <a href="mailto:wayanad24team@googlegroups.com" target="_blank"><u>Contribute to Archives</u></a></p>
       <div class="credits">
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
@@ -273,7 +272,7 @@
                  class="gallery-img w-full h-64 object-cover cursor-pointer"
                  onclick="openModal('${imageUrl}')">
             <div class="p-3 flex flex-wrap gap-2">
-              ${img.tags.map(tag => `<span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="fa fa-tag"></i> ${tag}</span>`).join('')}
+              ${img.tags.map(tag => `<span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded"><i class="bi bi-tags-fill"></i> ${tag}</span>`).join('')}
             </div>
           </div>
         `;
